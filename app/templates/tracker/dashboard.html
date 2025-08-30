@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
-<h1 class="h3 mb-3">Today: {{ today }}</h1>
+<h1 class="h3 mb-3">{% trans "Today" %}: {{ today }}</h1>
 <div class="row g-4">
   <div class="col-md-6">
     <div class="card">
       <div class="card-body">
-        <h2 class="h5">Quick add</h2>
+        <h2 class="h5">{% trans "Quick add" %}</h2>
         <form method="post">
           {% csrf_token %}
           <div class="row g-2">
@@ -13,23 +14,23 @@
               {{ form.non_field_errors }}
             </div>
             <div class="col-sm-6">
-              <label class="form-label">Calories (kcal)</label>
+              <label class="form-label">{% trans "Calories" %} (kcal)</label>
               {{ form.calories }}
             </div>
             <div class="col-sm-6">
-              <label class="form-label">Date</label>
+              <label class="form-label">{% trans "Date" %}</label>
               {{ form.date }}
             </div>
             <div class="col-sm-6">
-              <label class="form-label">Name (optional)</label>
+              <label class="form-label">{% trans "Name (optional)" %}</label>
               {{ form.name }}
             </div>
             <div class="col-sm-6">
-              <label class="form-label">Quantity (g)</label>
+              <label class="form-label">{% trans "Quantity (g)" %}</label>
               {{ form.quantity_g }}
             </div>
           </div>
-          <button class="btn btn-primary mt-3" type="submit">Add</button>
+          <button class="btn btn-primary mt-3" type="submit">{% trans "Add" %}</button>
         </form>
       </div>
     </div>
@@ -37,9 +38,9 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-body">
-        <h2 class="h5">Today's total</h2>
+        <h2 class="h5">{% trans "Today's total" %}</h2>
         <p class="display-6">{{ total }} kcal</p>
-        <h3 class="h6 mt-4">Entries</h3>
+        <h3 class="h6 mt-4">{% trans "Entries" %}</h3>
         <ul class="list-group">
           {% for e in entries %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -48,11 +49,11 @@
                 {% if e.quantity_g %}<span class="text-muted"> • {{ e.quantity_g }} g</span>{% endif %}
               </div>
               <div>
-                <a href="/entries/{{ e.id }}/edit/" class="btn btn-sm btn-outline-secondary">Edit</a>
+                <a href="/entries/{{ e.id }}/edit/" class="btn btn-sm btn-outline-secondary">{% trans "Edit" %}</a>
               </div>
             </li>
           {% empty %}
-            <li class="list-group-item">No entries yet.</li>
+            <li class="list-group-item">{% trans "No entries yet." %}</li>
           {% endfor %}
         </ul>
       </div>

@@ -3,6 +3,7 @@ from django.db.models import Sum
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from django.core.paginator import Paginator
+from django.utils.translation import gettext as _
 
 from .forms import ConsumptionEntryForm
 from .models import ConsumptionEntry
@@ -70,7 +71,7 @@ def entry_add(request):
             return redirect('tracker:entries_list')
     else:
         form = ConsumptionEntryForm(initial={'date': timezone.localdate()})
-    return render(request, 'tracker/entry_form.html', {'form': form, 'action': 'Add'})
+    return render(request, 'tracker/entry_form.html', {'form': form, 'action': _('Add')})
 
 
 @login_required
@@ -83,7 +84,7 @@ def entry_edit(request, pk):
             return redirect('tracker:entries_list')
     else:
         form = ConsumptionEntryForm(instance=entry)
-    return render(request, 'tracker/entry_form.html', {'form': form, 'action': 'Edit'})
+    return render(request, 'tracker/entry_form.html', {'form': form, 'action': _('Edit')})
 
 
 @login_required

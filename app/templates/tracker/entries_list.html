@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
-<h1 class="h3 mb-3">Entries for {{ date }}</h1>
+<h1 class="h3 mb-3">{% trans "Entries for" %} {{ date }}</h1>
 <div class="mb-3">
   <form method="get" class="row g-2">
     <div class="col-auto">
       <input type="date" name="date" value="{{ date|date:'Y-m-d' }}" class="form-control" />
     </div>
     <div class="col-auto">
-      <button class="btn btn-outline-secondary" type="submit">Go</button>
+      <button class="btn btn-outline-secondary" type="submit">{% trans "Go" %}</button>
     </div>
   </form>
 </div>
-<p><strong>Total:</strong> {{ total }} kcal</p>
+<p><strong>{% trans "Total" %}:</strong> {{ total }} kcal</p>
 <div class="mb-3">
-  <a class="btn btn-primary" href="/entries/add/">Add entry</a>
+  <a class="btn btn-primary" href="/entries/add/">{% trans "Add entry" %}</a>
 </div>
 <ul class="list-group mb-3">
   {% for e in page_obj %}
@@ -23,26 +24,26 @@
         {% if e.quantity_g %}<span class="text-muted"> • {{ e.quantity_g }} g</span>{% endif %}
       </div>
       <div>
-        <a href="/entries/{{ e.id }}/edit/" class="btn btn-sm btn-outline-secondary">Edit</a>
-        <a href="/entries/{{ e.id }}/delete/" class="btn btn-sm btn-outline-danger">Delete</a>
+        <a href="/entries/{{ e.id }}/edit/" class="btn btn-sm btn-outline-secondary">{% trans "Edit" %}</a>
+        <a href="/entries/{{ e.id }}/delete/" class="btn btn-sm btn-outline-danger">{% trans "Delete" %}</a>
       </div>
     </li>
   {% empty %}
-    <li class="list-group-item">No entries.</li>
+    <li class="list-group-item">{% trans "No entries." %}</li>
   {% endfor %}
 </ul>
 <nav>
   <ul class="pagination">
     {% if page_obj.has_previous %}
-      <li class="page-item"><a class="page-link" href="?date={{ date|date:'Y-m-d' }}&page={{ page_obj.previous_page_number }}">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="?date={{ date|date:'Y-m-d' }}&page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a></li>
     {% else %}
-      <li class="page-item disabled"><span class="page-link">Previous</span></li>
+      <li class="page-item disabled"><span class="page-link">{% trans "Previous" %}</span></li>
     {% endif %}
-    <li class="page-item disabled"><span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+    <li class="page-item disabled"><span class="page-link">{% blocktrans with number=page_obj.number num_pages=page_obj.paginator.num_pages %}Page {{ number }} of {{ num_pages }}{% endblocktrans %}</span></li>
     {% if page_obj.has_next %}
-      <li class="page-item"><a class="page-link" href="?date={{ date|date:'Y-m-d' }}&page={{ page_obj.next_page_number }}">Next</a></li>
+      <li class="page-item"><a class="page-link" href="?date={{ date|date:'Y-m-d' }}&page={{ page_obj.next_page_number }}">{% trans "Next" %}</a></li>
     {% else %}
-      <li class="page-item disabled"><span class="page-link">Next</span></li>
+      <li class="page-item disabled"><span class="page-link">{% trans "Next" %}</span></li>
     {% endif %}
   </ul>
 </nav>
