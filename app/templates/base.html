@@ -53,14 +53,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
-        {% if user.is_authenticated %}
-          <li class="nav-item"><a class="nav-link" href="/">{% trans "Dashboard" %}</a></li>
-          <li class="nav-item"><a class="nav-link" href="/entries/">{% trans "Entries" %}</a></li>
-          <li class="nav-item"><a class="nav-link" href="/entries/add/">{% trans "Add" %}</a></li>
-        {% endif %}
-      </ul>
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center ms-auto">
         <!-- Language Selector -->
         <div class="dropdown me-3">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
