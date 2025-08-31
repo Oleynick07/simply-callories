@@ -1,0 +1,6 @@
+1. Open food facts integration
+2. Adding entry as Photo + description option to add food using AI
+3. custom elements to track like protein and fibers
+4. glycemix index estimator
+5. Entry template storage for quick insert
+
