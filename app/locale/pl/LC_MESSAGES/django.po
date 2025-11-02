@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simply Calories\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-31 14:48+0000\n"
+"POT-Creation-Date: 2025-08-31 17:05+0000\n"
 "PO-Revision-Date: 2025-08-30 11:58+0000\n"
 "Last-Translator: AI Assistant\n"
 "Language-Team: Polish\n"
@@ -56,7 +56,6 @@ msgid "Already have an account?"
 msgstr "Masz już konto?"
 
 #: templates/base.html:7 templates/base.html:51
-#: templates/tracker/dashboard.html:4
 msgid "Simply Calories"
 msgstr "Simply Calories"
 
@@ -67,6 +66,10 @@ msgstr "Cześć"
 #: templates/base.html:87
 msgid "Logout"
 msgstr "Wyloguj się"
+
+#: templates/tracker/dashboard.html:4
+msgid "Today"
+msgstr "Dzisiaj"
 
 #: templates/tracker/dashboard.html:9
 msgid "Quick add"
@@ -88,56 +91,27 @@ msgstr "Nazwa (opcjonalnie)"
 msgid "Quantity (g)"
 msgstr "Ilość (g)"
 
-#: templates/tracker/dashboard.html:33
+#: templates/tracker/dashboard.html:33 tracker/views.py:74
 msgid "Add"
 msgstr "Dodaj"
 
+#: templates/tracker/dashboard.html:41
+msgid "Today's total"
+msgstr "Razem dzisiaj"
+
 #: templates/tracker/dashboard.html:43
-msgid "Today"
-msgstr "Dzisiaj"
-
-#: templates/tracker/dashboard.html:51 templates/tracker/entries_list.html:15
-msgid "Total"
-msgstr "Razem"
-
-#: templates/tracker/dashboard.html:61
-msgid "All Entries"
+#, fuzzy
+#| msgid "All Entries"
+msgid "Entries"
 msgstr "Wszystkie wpisy"
 
-#: templates/tracker/dashboard.html:83 templates/tracker/entries_list.html:27
-#: tracker/views.py:60
+#: templates/tracker/dashboard.html:52 templates/tracker/entries_list.html:27
 msgid "Edit"
 msgstr "Edytuj"
 
-#: templates/tracker/dashboard.html:84 templates/tracker/entries_list.html:28
-#: templates/tracker/entry_confirm_delete.html:10
-msgid "Delete"
-msgstr "Usuń"
-
-#: templates/tracker/dashboard.html:89
-msgid "No entries yet. Add your first entry above!"
-msgstr "Brak wpisów. Dodaj pierwszy wpis powyżej!"
-
-#: templates/tracker/dashboard.html:96
-msgid "Entries pagination"
-msgstr "Stronicowanie wpisów"
-
-#: templates/tracker/dashboard.html:100 templates/tracker/dashboard.html:104
-#: templates/tracker/entries_list.html:38
-#: templates/tracker/entries_list.html:40
-msgid "Previous"
-msgstr "Poprzednia"
-
-#: templates/tracker/dashboard.html:110 templates/tracker/entries_list.html:42
-#, python-format
-msgid "Page %(number)s of %(num_pages)s"
-msgstr "Strona %(number)s z %(num_pages)s"
-
-#: templates/tracker/dashboard.html:116 templates/tracker/dashboard.html:120
-#: templates/tracker/entries_list.html:44
-#: templates/tracker/entries_list.html:46
-msgid "Next"
-msgstr "Następna"
+#: templates/tracker/dashboard.html:56
+msgid "No entries yet."
+msgstr "Brak wpisów."
 
 #: templates/tracker/entries_list.html:4
 msgid "Entries for"
@@ -147,13 +121,37 @@ msgstr "Wpisy z dnia"
 msgid "Go"
 msgstr "Idź"
 
+#: templates/tracker/entries_list.html:15
+msgid "Total"
+msgstr "Razem"
+
 #: templates/tracker/entries_list.html:17
 msgid "Add entry"
 msgstr "Dodaj wpis"
 
+#: templates/tracker/entries_list.html:28
+#: templates/tracker/entry_confirm_delete.html:10
+msgid "Delete"
+msgstr "Usuń"
+
 #: templates/tracker/entries_list.html:32
 msgid "No entries."
 msgstr "Brak wpisów."
+
+#: templates/tracker/entries_list.html:38
+#: templates/tracker/entries_list.html:40
+msgid "Previous"
+msgstr "Poprzednia"
+
+#: templates/tracker/entries_list.html:42
+#, python-format
+msgid "Page %(number)s of %(num_pages)s"
+msgstr "Strona %(number)s z %(num_pages)s"
+
+#: templates/tracker/entries_list.html:44
+#: templates/tracker/entries_list.html:46
+msgid "Next"
+msgstr "Następna"
 
 #: templates/tracker/entry_confirm_delete.html:6
 msgid "Delete entry"
@@ -172,11 +170,15 @@ msgstr "Anuluj"
 msgid "entry"
 msgstr "wpis"
 
+#: tracker/views.py:87
+msgid "Save"
+msgstr "Zapisz"
+
+#~ msgid "No entries yet. Add your first entry above!"
+#~ msgstr "Brak wpisów. Dodaj pierwszy wpis powyżej!"
+
+#~ msgid "Entries pagination"
+#~ msgstr "Stronicowanie wpisów"
+
 #~ msgid "Dashboard"
 #~ msgstr "Pulpit"
-
-#~ msgid "Today's total"
-#~ msgstr "Razem dzisiaj"
-
-#~ msgid "No entries yet."
-#~ msgstr "Brak wpisów."

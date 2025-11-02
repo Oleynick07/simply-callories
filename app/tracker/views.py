@@ -81,10 +81,10 @@ def entry_edit(request, pk):
         form = ConsumptionEntryForm(request.POST, instance=entry)
         if form.is_valid():
             form.save()
-            return redirect('tracker:entries_list')
+            return redirect('tracker:dashboard')
     else:
         form = ConsumptionEntryForm(instance=entry)
-    return render(request, 'tracker/entry_form.html', {'form': form, 'action': _('Edit')})
+    return render(request, 'tracker/entry_form.html', {'form': form, 'action': _('Save')})
 
 
 @login_required
